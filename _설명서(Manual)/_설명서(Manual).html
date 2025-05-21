@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프리코네 아레나 조합 자동 검색기 사용자 설명서</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            color: #2980b9;
+        }
+
+        h3 {
+            margin-top: 25px;
+            color: #16a085;
+        }
+
+        h4 {
+            color: #27ae60;
+        }
+
+        .version-info {
+            text-align: center;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .important-notice {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffeeba;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .important-notice strong {
+            color: #856404;
+        }
+
+        nav {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        nav ol {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        nav ol li {
+            margin-bottom: 8px;
+        }
+
+        nav ol li a {
+            text-decoration: none;
+            color: #2980b9;
+        }
+
+        nav ol li a:hover {
+            text-decoration: underline;
+            color: #1c6ca7;
+        }
+
+        ul,
+        ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .image-placeholder {
+            border: 2px dashed #bdc3c7;
+            padding: 20px;
+            margin: 15px 0;
+            text-align: center;
+            background-color: #f8f9fa;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .image-placeholder img,
+        .image-placeholder video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #ddd;
+            padding: 3px;
+            box-sizing: border-box;
+        }
+
+        .caption {
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background-color: #2d2d2d;
+            color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #e8e8e8;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        strong {
+            color: #c0392b;
+        }
+
+        a {
+            color: #3498db;
+        }
+
+        a:hover {
+            color: #217dbb;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .disclaimer {
+            font-size: 0.9em;
+            border: 1px solid #e74c3c;
+            padding: 15px;
+            background-color: #fbecec;
+            color: #a94442;
+        }
+
+        .disclaimer strong {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>프리코네 아레나 조합 자동 검색기 사용자 설명서</h1>
+        <p class="version-info"><strong>문서 버전: 1.0.0 (프로그램 버전 1.0.0 기준)</strong><br>
+            <strong>최종 수정일: 2025-05-21</strong>
+        </p>
+
+        <hr>
+
+        <div class="important-notice">
+            <strong>※ 중요: 프로그램 사용 전 반드시 숙지하세요!</strong>
+            <ul>
+                <li>이 프로그램은 공개된 웹사이트 정보를 활용하여 검색을 자동화하는 도구이며, 게임 클라이언트를 직접 수정하거나 서버와 비정상적인 통신을 하지 않습니다.</li>
+                <li>하지만, 모든 자동화 도구 사용에는 잠재적인 위험이 따를 수 있으며 프로그램 사용으로 인해 발생하는 직간접적인 문제에 대해 <strong>개발자는 어떠한 책임도 지지
+                        않습니다.</strong> 사용자 본인의 판단과 책임 하에 사용해 주시기 바랍니다.</li>
+                <li>이 프로그램은 <code>pcrdfans.com</code> 및 <code>redive.estertion.win</code> 웹사이트의 현재 구조를 기반으로 작동합니다. 해당
+                    웹사이트들의 대규모 업데이트 시 정상 작동하지 않을 수 있으며, 이 경우 개발자의 프로그램 업데이트가 필요할 수 있습니다.</li>
+                <li>캐릭터 아이콘 인식률은 100%를 보장하지 않으며, 게임 내 화면 구성, 캡처 품질, 임계값 설정에 따라 달라질 수 있습니다.</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <nav>
+            <h2>목차</h2>
+            <ol>
+                <li><a href="#s1">1. 프로그램 소개</a></li>
+                <li><a href="#s2">2. 시작하기 전 준비사항</a></li>
+                <li><a href="#s3">3. 프로그램 실행 및 초기 설정</a>
+                    <ul>
+                        <li><a href="#s3-1">3.1 프로그램 실행</a></li>
+                        <li><a href="#s3-2">3.2 언어, 게임 서버, 정렬 방식 선택</a></li>
+                        <li><a href="#s3-3">3.3 사이트 연결 및 아이콘 초기화</a></li>
+                    </ul>
+                </li>
+                <li><a href="#s4">4. 아레나 조합 검색 방법</a>
+                    <ul>
+                        <li><a href="#s4-1">4.1 아레나 조합 캡처 (성공적인 캡처 가이드 포함)</a></li>
+                        <li><a href="#s4-2">4.2 캡처된 아이콘 확인 및 임계값 설정</a></li>
+                        <li><a href="#s4-3">4.3 아레나 조합 검색 실행</a></li>
+                    </ul>
+                </li>
+                <li><a href="#s5">5. 추가 기능</a>
+                    <ul>
+                        <li><a href="#s5-1">5.1 유사도 비교 테스트</a></li>
+                        <li><a href="#s5-2">5.2 (수동) 전체 캐릭터 아이콘 다운로드</a></li>
+                        <li><a href="#s5-3">5.3 프로그램 정보 및 개발자 웹사이트 (메뉴)</a></li>
+                    </ul>
+                </li>
+                <li><a href="#s6">6. 로그 및 메시지 창 이해하기</a></li>
+                <li><a href="#s7">7. 주요 용어 설명</a></li>
+                <li><a href="#s8">8. 자주 묻는 질문</a></li>
+                <li><a href="#s9">9. 고급 활용팁</a></li>
+                <li><a href="#s10">10. 문제 해결 및 팁</a></li>
+                <li><a href="#s11">11. 피드백 및 버그 제보 안내</a></li>
+                <li><a href="#s12">12. 프로그램 제거 방법</a></li>
+                <li><a href="#s13">13. 감사의 말</a></li>
+                <li><a href="#s14">14. 면책 조항</a></li>
+            </ol>
+        </nav>
+
+        <hr>
+
+        <section id="s1">
+            <h2>1. 프로그램 소개</h2>
+            <p>이 프로그램은 인기 모바일 게임 '프린세스 커넥트! Re:Dive'(이하 프리코네)의 아레나(배틀 아레나, 프린세스 아레나)에서 상대방의 조합을 보고 효과적인 공략 조합을 빠르게 찾을 수
+                있도록 도와주는 자동화 도구입니다.</p>
+            <p>게임 화면에서 상대방 조합 캐릭터를 마우스로 드래그하여 캡처하면, 프로그램이 자동으로 캐릭터 아이콘을 인식하고, 이를 바탕으로 <a href="https://pcrdfans.com"
+                    target="_blank">pcrdfans.com</a> 웹사이트에서 최적의 공격 조합을 검색해줍니다.</p>
+            <p><strong>주요 기능:</strong></p>
+            <ul>
+                <li><strong>화면 드래그 캡처:</strong> 게임 내 조합을 손쉽게 캡처합니다.</li>
+                <li><strong>캐릭터 자동 인식:</strong> OpenCV 기술을 활용하여 캡처된 이미지에서 캐릭터 아이콘을 자동으로 감지하고 분리합니다.</li>
+                <li><strong>다단계 유사도 비교:</strong> 캡처된 아이콘과 로컬/웹사이트 아이콘 간의 다단계 비교를 통해 정확도를 높입니다. (★6 아이콘 자동 ★3 변환 포함)</li>
+                <li><strong>웹사이트 자동 검색:</strong> Selenium을 사용하여 pcrdfans.com에서 인식된 조합으로 자동 검색을 실행합니다.</li>
+                <li><strong>다국어 및 서버 지원:</strong> 웹 사이트 영어, 일본어, 중국어 설정 및 다양한 서버별 결과 필터링을 지원합니다.</li>
+            </ul>
+            <div class="image-placeholder">
+                <img src="1-1(3-1).png" alt="[1-1(3-1).png] 프리코네 아레나 조합 자동 검색기 메인 화면 스크린샷">
+            </div>
+            <p class="caption">그림 1-1: 프리코네 아레나 조합 자동 검색기 메인 화면</p>
+        </section>
+
+        <section id="s2">
+            <h2>2. 시작하기 전 준비사항</h2>
+            <ul>
+                <li><strong>Python 설치:</strong> Python 스크립트로 프로그램이 제공되었다면 반드시 설치해야 합니다. (<a href="#s8">8. 자주 묻는 질문</a>의
+                    Q6 참고 ) (단, 실행 파일(.exe) 형태로 제공되었다면 설치 불필요)</li>
+                <li><strong>게임 클라이언트 또는 상대방의 아레나 조합 자료:</strong> 게임 클라이언트에서 상대방의 아레나(배틀 아레나, 프린세스 아레나) 조합을 캡처 또는 별도로
+                    캡처해 둔 자료 등을 사용할 환경</li>
+                <li><strong>Google Chrome 브라우저:</strong> 이 프로그램은 Chrome 브라우저를 사용하여 웹 자동화를 수행합니다. <strong>반드시 Chrome이
+                        설치되어 있어야 하며, 최신 버전으로 유지하는 것을 권장합니다.</strong></li>
+                <li><strong>안정적인 인터넷 연결:</strong> pcrdfans.com 및 캐릭터 아이콘 데이터 다운로드를 위해 필요합니다. Wi-Fi 환경 등 안정적인 네트워크에서
+                    사용하시는 것이 좋습니다.</li>
+            </ul>
+        </section>
+
+        <section id="s3">
+            <h2>3. 프로그램 실행 및 초기 설정</h2>
+            <h3 id="s3-1">3.1 프로그램 실행</h3>
+            <p>프로그램을 실행하면 메인 창이 나타납니다. 처음 실행 시 프로그램 사용 순서 가이드가 로그 창에 표시됩니다.</p>
+            <div class="image-placeholder">
+                <img src="1-1(3-1).png" alt="[1-1(3-1).png] 프로그램 최초 실행 시 화면 및 로그 창 스크린샷">
+            </div>
+            <p class="caption">그림 3-1: 프로그램 최초 실행 시 화면 및 로그 창 안내</p>
+
+            <h3 id="s3-2">3.2 언어, 게임 서버, 정렬 방식 선택</h3>
+            <p>조합 검색을 시작하기 전에, 사용자의 게임 환경에 맞게 설정을 변경해야 합니다. <strong>이 설정은 pcrdfans.com 웹사이트 검색 시 적용됩니다.</strong></p>
+            <ol>
+                <li><strong>언어/Language:</strong> pcrdfans.com 검색 시 사용할 언어를 선택합니다. (English, 日本語, 中文 지원) 이 설정을 변경하면 프로그램이
+                    <code>pcrdfans.com</code> 웹사이트를 해당 언어 페이지로 이동시키고, 아래 게임 서버 및 정렬 방식 옵션도 해당 언어에 맞게 동기화됩니다.</li>
+                <li><strong>게임 서버/Game Server:</strong> 검색 대상이 되는 게임 서버를 선택합니다.</li>
+                <li><strong>정렬/Sorting:</strong> pcrdfans.com에서 검색 결과를 정렬할 기준을 선택합니다.</li>
+            </ol>
+            <div class="image-placeholder">
+                <table style="margin-left: auto; margin-right: auto; border-collapse: collapse; text-align: center;">
+                    <thead>
+                        <tr>
+                            <td style="vertical-align: top; padding: 5px;">
+                                <div class="image-placeholder" style="margin:0; padding: 5px; border-style: none; background-color: transparent;">
+                                    <img src="3-2-1.png" alt="[3-2-1.png] 웹 페이지 언어 선택 드롭다운 메뉴 스크린샷">
+                                </div>
+                            </td>
+                            <td style="vertical-align: top; padding: 5px;">
+                                <div class="image-placeholder" style="margin:0; padding: 5px; border-style: none; background-color: transparent;">
+                                    <img src="3-2-2.png" alt="[3-2-2.png] 게임 서버 선택 드롭다운 메뉴 스크린샷">
+                                </div>
+                            </td>
+                            <td style="vertical-align: top; padding: 5px;">
+                                <div class="image-placeholder" style="margin:0; padding: 5px; border-style: none; background-color: transparent;">
+                                    <img src="3-2-3.png" alt="[3-2-3.png] 정렬 방식 선택 드롭다운 메뉴 스크린샷">
+                                </div>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding-top: 0;">
+                                <p class="caption" style="margin: 0;">웹 페이지 언어 선택 메뉴</p>
+                            </td>
+                            <td style="padding-top: 0;">
+                                <p class="caption" style="margin: 0;">게임 서버 선택 메뉴</p>
+                            </td>
+                            <td style="padding-top: 0;">
+                                <p class="caption" style="margin: 0;">정렬 방식 선택 메뉴</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="caption">그림 3-2: 웹 페이지 언어, 게임 서버, 정렬 방식 설정 드롭다운 메뉴</p>
+
+            <h3 id="s3-3">3.3 사이트 연결 및 아이콘 초기화</h3>
+            <p>위 설정을 마친 후, <strong>[사이트 연결]</strong> 버튼을 클릭합니다.</p>
+            <ul>
+                <li>이 버튼을 클릭하면 프로그램은 선택한 언어에 맞춰 pcrdfans.com 웹사이트에 <strong>자동으로 접속하고, 필요한 초기 설정을 진행합니다.</strong></li>
+                <li>웹사이트에서 사용하는 캐릭터 아이콘(스프라이트 시트)의 <strong>최신 버전을 확인</strong>하고, 필요시 다운로드하여 개별 아이콘으로 분리/저장합니다. 이 아이콘들은
+                    웹사이트 자동 클릭 시 사용됩니다.</li>
+                <li><strong>최초 실행 시 또는 아이콘 데이터가 없는 경우 (<code>character_images/character_unit_icon_all</code> 폴더에 JPG 파일이
+                        없는 경우):</strong> 캐릭터 인식을 위해 필요한 모든 캐릭터의 인게임 아이콘을 <code>redive.estertion.win</code> 사이트에서
+                    <strong>자동으로 다운로드합니다</strong> (WebP 형식 다운로드 후 JPG로 변환). 이 과정은 다소 시간이 소요될 수 있으며(수 분 소요 가능), 로그 창에 진행
+                    상황이 표시됩니다.
+                    <ul>
+                        <li>만약 자동 다운로드가 실패하거나 문제가 발생하면, <a href="#s5-2">(수동) 전체 캐릭터 아이콘 다운로드</a> 기능을 사용할 수 있습니다.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="image-placeholder">
+                <video controls>
+                    <source src="3-3.mp4" type="video/mp4">
+                    현재 브라우저에서는 비디오 태그를 지원하지 않아 영상 재생이 어렵습니다. 설명서 파일과 동일한 위치에 있는 '3-3.mp4' 파일을 직접 실행하여 확인해 주시기 바랍니다.
+                </video>
+            </div>
+            <p class="caption">영상 3-3: '사이트 연결' 과정 및 로그 창 진행 상황 (1배속)</p>
+            <p>성공적으로 연결되면 로그 창에 "사이트 연결 및 아이콘 처리 완료!" 메시지가 나타나고, 관련 버튼들이 활성화됩니다.</p>
+        </section>
+
+        <section id="s4">
+            <h2>4. 아레나 조합 검색 방법</h2>
+            <h3 id="s4-1">4.1 아레나 조합 캡처 (성공적인 캡처 가이드 포함)</h3>
+            <ol>
+                <li>프리코네 게임을 실행하고, 아레나에서 상대방의 조합 화면으로 이동합니다.</li>
+                <li>프로그램에서 <strong>[아레나 조합 캡쳐]</strong> 버튼을 클릭합니다.
+                    <ul>
+                        <li>클릭하면 프로그램 메인 창은 최소화되고, 화면 전체가 약간 어두운 반투명 상태로 변경됩니다. 마우스 커서는 십자 모양(+)으로 바뀝니다.</li>
+                    </ul>
+                    <div class="image-placeholder">
+                        <img src="4-1(4-3).png" alt="[4-1(4-3).png] 아레나 조합 캡처 시작 버튼이 있는 프로그램 UI">
+                    </div>
+                    <p class="caption">그림 4-1: 아레나 조합 캡처 시작</p>
+                    <div class="image-placeholder">
+                        <video controls>
+                            <source src="4-2.mp4" type="video/mp4">
+                            현재 브라우저에서는 비디오 태그를 지원하지 않아 영상 재생이 어렵습니다. 설명서 파일과 동일한 위치에 있는 '4-2.mp4' 파일을 직접 실행하여 확인해 주시기 바랍니다.
+                        </video>
+                    </div>
+                    <p class="caption">영상 4-2: 조합 드래그 캡처 과정 (1배속))</p>
+                </li>
+                <li><strong>성공적인 캡처를 위한 팁:</strong>
+                    <ul>
+                        <li><strong>상대방 조합 캐릭터 모두 명확하게 포함되도록</strong> 드래그하여 영역을 선택합니다. 특히 캐릭터의 얼굴 등 핵심적인 부분이 잘 보이도록 합니다.</li>
+                        <li>아이콘의 <strong>테두리까지 충분히 포함</strong>하되, 각 아이콘 사이의 <strong>불필요한 간격은 최소화</strong>하는 것이 좋습니다.
+                            아이콘만 정확히 감싸는 느낌으로 선택하세요.</li>
+                        <li>다른 UI 요소(예: 상대방 닉네임, 전투력 숫자, 스킬 아이콘 등)가 <strong>아이콘 영역을 침범하지 않도록</strong> 주의하세요.</li>
+                    </ul>
+                    <div class="image-placeholder">
+                        <table style="margin-left: auto; margin-right: auto; border-collapse: collapse; text-align: center;">
+                            <thead> <!-- 이미지 제목 행 -->
+                                <tr>
+                                    <td style="padding: 5px 5px 0 5px; font-weight: bold;">좋은 캡처 예시</td>
+                                    <td style="padding: 5px 5px 0 5px; font-weight: bold;">나쁜 캡처 예시</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr> <!-- 이미지 행 -->
+                                    <td style="vertical-align: top; padding: 5px;">
+                                        <div class="image-placeholder" style="margin:0; padding: 5px; border-style: none; background-color: transparent;">
+                                            <img src="4-1(4-3).png" alt="[4-1(4-3).png] 좋은 캡처 예시 스크린샷 (아이콘 명확히 포함)">
+                                        </div>
+                                    </td>
+                                    <td style="vertical-align: top; padding: 5px;">
+                                        <div class="image-placeholder" style="margin:0; padding: 5px; border-style: none; background-color: transparent;">
+                                            <img src="4-3-1.png" alt="[4-3-1.png] 나쁜 캡처 예시 스크린샷 (아이콘 일부 잘림, 다른 UI 포함 등)">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr> <!-- 이미지 설명 행 -->
+                                    <td style="vertical-align: top; padding: 0 5px 5px 5px;">
+                                        <p class="caption" style="margin: 0;">(아이콘이 명확히 포함되고 테두리까지 적절히 감싼 모습)</p>
+                                    </td>
+                                    <td style="vertical-align: top; padding: 0 5px 5px 5px;">
+                                        <p class="caption" style="margin: 0;">(아이콘 일부 잘림, 너무 넓게 선택하여 다른 UI 포함)</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="caption">그림 4-3: 성공적인 캡처와 잘못된 캡처 예시 비교</p>
+                </li>
+                <li>드래그하는 동안 선택 영역은 원래 화면 밝기로 유지되며, 빨간색 테두리로 선택 범위가 표시됩니다. 마우스 버튼을 놓으면 선택한 영역이 캡처되고, 프로그램 메인 창이 다시 나타납니다.</li>
+            </ol>
+
+            <h3 id="s4-2">4.2 캡처된 아이콘 확인 및 임계값 설정</h3>
+            <p>캡처가 완료되면, 프로그램 메인 창의 아이콘 미리보기 영역에 감지된 캐릭터 아이콘들이 순서대로 표시됩니다. (좌측부터 우측 순)</p>
+            <div class="image-placeholder">
+                <table style="margin-left: auto; margin-right: auto; border-collapse: collapse; text-align: center;">
+                    <thead> <!-- 예시 제목 행 -->
+                        <tr>
+                            <td style="padding: 5px 5px 0 5px; font-weight: bold;">아이콘 미리보기 (성공 예시)</td>
+                            <td style="padding: 5px 5px 0 5px; font-weight: bold;">아이콘 미리보기 (인식 실패 예시)</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr> <!-- 이미지 행 -->
+                            <td style="vertical-align: top; padding: 5px;">
+                                <div class="image-placeholder" style="margin:0; padding: 5px; border-style: none; background-color: transparent;">
+                                    <img src="4-4-1.png" alt="[4-4-1.png] 성공적으로 인식된 캐릭터 아이콘 미리보기">
+                                </div>
+                            </td>
+                            <td style="vertical-align: top; padding: 5px;">
+                                <div class="image-placeholder" style="margin:0; padding: 5px; border-style: none; background-color: transparent;">
+                                    <img src="4-4-2.png" alt="[4-4-2.png] 인식 실패 또는 부분적으로만 인식된 아이콘 미리보기">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr> <!-- 이미지 설명 행 -->
+                            <td style="vertical-align: top; padding: 0 5px 5px 5px;">
+                                <p class="caption" style="margin: 0;">(성공적으로 캐릭터 아이콘이 순서대로 표시된 모습)</p>
+                            </td>
+                            <td style="vertical-align: top; padding: 0 5px 5px 5px;">
+                                <p class="caption" style="margin: 0;">(일부 아이콘 인식 실패, 임계값 조절 또는 재캡처 필요)</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="caption">그림 4-4: 캡처 후 아이콘 미리보기 (좌: 성공, 우: 인식 실패 예시)</p>
+            <ul>
+                <li><strong>임계값 (Threshold):</strong> 이 값은 캡처된 아이콘과 프로그램이 가진 아이콘 데이터를 비교할 때 얼마나 유사해야 같은 캐릭터로 판단할지를 결정하는
+                    수치입니다 (0.01 ~ 1.00). <a href="#s7">7. 주요 용어 설명</a>에서 <strong>SSIM</strong> 참고.
+                    <ul>
+                        <li>기본값은 <strong>0.50</strong>으로 설정되어 있으며, 대부분의 경우 잘 작동합니다.</li>
+                        <li>만약 아이콘 인식이 잘 안되거나, 다른 캐릭터로 잘못 인식되는 경우 이 값을 조절해 보세요.
+                            <ul>
+                                <li><strong>값을 낮추면 (예: 0.40):</strong> 더 너그럽게 판단하여 약간 다른 이미지도 같은 캐릭터로 인식할 가능성이 높아집니다.
+                                    하지만 전혀 다른 캐릭터로 잘못 인식할 위험도 커집니다.</li>
+                                <li><strong>값을 높이면 (예: 0.60):</strong> 더 엄격하게 판단하여 정확도가 높아지지만, 캡처 상태가 조금만 달라도 다른 캐릭터로
+                                    인식하거나 아예 인식하지 못할 수 있습니다.</li>
+                            </ul>
+                        </li>
+                        <li>스핀박스에 직접 입력하거나, 마우스 휠 또는 위/아래 화살표로 0.01 단위로 미세 조정할 수 있습니다. <a href="#s9">9. 고급 활용팁</a>의
+                            임계값 조절 노하우를 참고하세요.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="image-placeholder">
+                <img src="4-5.png" alt="[4-5.png] 임계값 설정 스핀박스가 있는 프로그램 UI">
+            </div>
+            <p class="caption">그림 4-5: 임계값 설정 스핀박스</p>
+
+            <h3 id="s4-3">4.3 아레나 조합 검색 실행</h3>
+            <p>캡처된 아이콘과 임계값 설정이 완료되면, <strong>[아레나 조합 검색]</strong> 버튼을 클릭합니다.</p>
+            <div class="image-placeholder">
+                <video controls>
+                    <source src="4-6.mp4" type="video/mp4">
+                    현재 브라우저에서는 비디오 태그를 지원하지 않아 영상 재생이 어렵습니다. 설명서 파일과 동일한 위치에 있는 '4-6.mp4' 파일을 직접 실행하여 확인해 주시기 바랍니다.
+                </video>
+            </div>
+            <p class="caption">영상 4-6: 아레나 조합 자동 검색 실행 과정 (1배속)</p>
+            <ul>
+                <li>프로그램은 캡처된 아이콘을 순서대로 분석합니다. 로그 창에 각 아이콘 처리 과정이 간략히 표시됩니다.
+                    <ol>
+                        <li><strong>1단계 (인게임 아이콘 비교):</strong> 캡처된 아이콘과 로컬에 저장된 전체 인게임 캐릭터 아이콘(JPG)을 비교하여 가장 유사한 캐릭터를 1차
+                            식별합니다.</li>
+                        <li><strong>2단계 (★6 → ★3 자동 변환):</strong> 만약 1단계에서 식별된 캐릭터가 ★6이면, 웹사이트 검색에 주로 사용되는 ★3 아이콘으로 자동
+                            변환합니다. (예: 쿄우카(★6) 아이콘 → 쿄우카(★3) 아이콘)</li>
+                        <li><strong>3단계 (웹사이트 아이콘 비교):</strong> 2단계를 거친 (또는 원래의) 인게임 아이콘을 pcrdfans.com에서 사용하는 스프라이트 아이콘과
+                            다시 비교하여 최종적으로 웹사이트에서 클릭할 아이콘을 확정합니다.</li>
+                    </ol>
+                </li>
+                <li>모든 아이콘이 식별되면, 프로그램이 자동으로 Chrome 브라우저를 제어하여 pcrdfans.com 웹사이트에 접속합니다 (이미 열려있다면 해당 탭 활용).</li>
+                <li>선택된 언어, 서버, 정렬 방식 설정에 맞춰 웹사이트 필터를 조정한 후, 식별된 캐릭터 아이콘을 순서대로 클릭합니다.</li>
+                <li>마지막으로 웹사이트의 검색 버튼을 자동으로 클릭하여 공략 조합 결과를 보여줍니다.</li>
+            </ul>
+            <p>검색이 완료되면 로그 창에 관련 메시지가 표시됩니다. <strong>브라우저 창은 사용자가 직접 닫아야 합니다.</strong></p>
+        </section>
+
+        <section id="s5">
+            <h2>5. 추가 기능</h2>
+            <h3 id="s5-1">5.1 유사도 비교 테스트</h3>
+            <p>이 기능은 캡처된 아이콘이 프로그램 내부에서 어떻게 인식되고 있는지, 어떤 아이콘들과 유사하다고 판단되는지 <strong>상세하게 확인</strong>할 수 있는 디버깅 및 분석용
+                도구입니다. <strong>캐릭터 인식이 잘 안될 때 원인 파악에 매우 유용합니다.</strong></p>
+            <ol>
+                <li>먼저 <a href="#s4-1">4.1 아레나 조합 캡처</a>를 통해 아이콘을 캡처합니다.</li>
+                <li>필요시 임계값을 조절합니다. (테스트 결과에 임계값이 반영됩니다)</li>
+                <li><strong>[유사도 비교 테스트]</strong> 버튼을 클릭합니다.
+                    <ul>
+                        <li>메인 창의 로그 영역에 각 분할 이미지별 상세 분석 과정(1단계 인게임 아이콘 매칭 결과, 2단계 ★6 → ★3 변환 여부, 3단계 스프라이트 아이콘 매칭 결과 상위
+                            후보들)이 텍스트로 출력됩니다.</li>
+                        <li>분석이 완료되면, <strong>새로운 창 ("유사도 비교 테스트 결과")</strong>이 나타나 시각적인 비교 결과를 보여줍니다.
+                            <ul>
+                                <li><strong>상단:</strong> 원본 캡처 이미지 미리보기 (사용자가 드래그한 전체 영역)</li>
+                                <li><strong>하단 표:</strong>
+                                    <ul>
+                                        <li><strong>분할 이미지:</strong> 프로그램이 자동 감지/분리한 각 아이콘</li>
+                                        <li><strong>인게임 아이콘:</strong> 1단계에서 가장 유사하다고 판단된 로컬 JPG 아이콘과 그 유사도 점수</li>
+                                        <li><strong>★6 → ★3 전환:</strong> 1단계 아이콘이 ★6일 경우, 변환된 ★3 아이콘 (해당 없거나 실패 시 다르게
+                                            표시)</li>
+                                        <li><strong>유사도 1~3위:</strong> 3단계에서 pcrdfans 스프라이트 아이콘과 비교하여 가장 유사하다고 판단된 상위 3개
+                                            아이콘과 각각의 유사도 점수, 그리고 어떤 로컬 JPG 아이콘을 기준으로 비교했는지 표시됩니다.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+            <div class="image-placeholder">
+                <img src="5-1.png" alt="[5-1.png] 유사도 비교 테스트 결과 창 상세 화면 스크린샷">
+            </div>
+            <p class="caption">그림 5-1: 유사도 비교 테스트 결과 창 예시</p>
+            <p>이 기능은 캐릭터 인식이 잘 안될 때 "왜 이 캐릭터로 인식했을까?" 또는 "왜 인식을 못 했을까?"에 대한 단서를 제공하며, 적절한 임계값 조절의 근거로 활용할 수 있습니다.</p>
+
+            <h3 id="s5-2">5.2 (수동) 전체 캐릭터 아이콘 다운로드</h3>
+            <p>프로그램은 "[사이트 연결]" 시 자동으로 필요한 아이콘을 다운로드/업데이트하지만, 다음과 같은 경우 수동으로 전체 캐릭터 아이콘을 다시 다운로드할 수 있습니다.</p>
+            <ul>
+                <li><strong>자동 다운로드/업데이트가 실패한 경우</strong> (로그 창에 오류 메시지 표시됨)</li>
+                <li>로컬에 저장된 아이콘 파일(<code>character_images/character_unit_icon_all</code> 폴더 내 JPG 파일)이 <strong>손상되거나 누락된
+                        것으로 의심될 경우</strong></li>
+                <li><code>character_images/character_unit_icon_all</code> 폴더가 실수로 삭제되었거나, 내부에 JPG 파일이 없는 경우</li>
+            </ul>
+            <p><strong>[ (수동) 전체 캐릭터 아이콘 다운로드 ]</strong> 버튼을 클릭하면 안내 및 확인 창이 나타납니다.</p>
+            <div class="image-placeholder">
+                <img src="5-2.png" alt="[5-2.png] (수동) 전체 캐릭터 아이콘 다운로드 실행 확인 대화상자 스크린샷">
+            </div>
+            <p class="caption">그림 5-2: 전체 캐릭터 아이콘 수동 다운로드 확인 창</p>
+            <p>"예"를 클릭하면 <code>redive.estertion.win</code> 사이트에서 모든 캐릭터의 아이콘(WebP)을 다운로드하고 JPG로 변환하여 저장합니다. 원본 WebP 파일은
+                변환 후 삭제됩니다. 이 작업은 인터넷 속도 및 PC 성능에 따라 <strong>몇 분 정도 소요될 수 있으며,</strong> 진행 상황은 로그 창에 상세히 표시됩니다. 작업 중에는
+                다른 버튼 사용이 제한될 수 있습니다.</p>
+
+            <h3 id="s5-3">5.3 프로그램 정보 및 개발자 웹사이트 (메뉴)</h3>
+            <p>프로그램 메인 창 상단의 "메뉴(Menu)" 항목을 통해 다음과 같은 추가 정보를 확인하거나 기능에 접근할 수 있습니다.</p>
+            <ul>
+                <li><strong>정보(About):</strong>
+                    <ul>
+                        <li>이 항목을 클릭하면 프로그램의 버전 정보, 제작자(Created by), 라이선스 정보(GNU General Public License v3 (GPLv3)) 및 간단한 주의사항을 담은 "정보(About)" 대화상자가 나타납니다.</li>
+                    </ul>
+                </li>
+                <li><strong>개발자 웹사이트 (Developer Website):</strong>
+                    <ul>
+                        <li>이 항목을 클릭하면 프로그램 개발자의 GitHub 페이지 (<code>https://github.com/IZH318</code>)가 사용자의 기본 웹 브라우저에서 새 탭으로 열립니다. 개발자의 다른 프로젝트를 확인하거나, 프로그램의 소스 코드를 찾아볼 수 있습니다.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="s6">
+            <h2>6. 로그 및 메시지 창 이해하기</h2>
+            <p>프로그램 메인 창 하단에는 로그 메시지 박스가 있습니다. 이 창에는 프로그램의 모든 주요 동작과 상태, 오류 정보가 시간 순서대로 기록됩니다.</p>
+            <ul>
+                <li><strong>표시 내용 예시:</strong>
+                    <ul>
+                        <li>프로그램 시작/종료 (<code>[YYYY-MM-DD HH:MM:SS.mmm] 프로그램 실행 성공</code>)</li>
+                        <li>설정 변경 및 웹사이트 반영 결과 (<code>[시간] 영어 페이지로 변경 중...</code>, <code>[시간] 서버 변경 완료: All</code>)</li>
+                        <li>사이트 연결 시도, 웹드라이버 초기화, pcrdfans.com 접속</li>
+                        <li>아이콘 버전 확인, 다운로드, 분리, 저장 과정 (<code>[시간] 새로운 버전이 감지되었습니다!</code>,
+                            <code>[시간] 아이콘 처리 중...</code>)
+                        </li>
+                        <li>전체 캐릭터 아이콘 다운로드 진행률 및 결과 (<code>[시간] 다운로드 완료: 100131.webp (15.3%)</code>,
+                            <code>[시간] JPG 변환 완료 및 WebP 삭제: 100131.webp (15.3%)</code>)
+                        </li>
+                        <li>아레나 조합 캡처 시도 및 아이콘 감지 결과 (<code>[시간] 둥근 사각형 모양의 아이콘을 감지하지 못했습니다.</code>)</li>
+                        <li>임계값 변경</li>
+                        <li>아레나 조합 검색 시 각 분할 아이콘 분석 과정 요약 (<code>[시간] 분할 이미지 1 처리 중...</code>,
+                            <code>[시간] 유사한 스프라이트 아이콘을 찾았습니다: char_023.png (점수: 0.8765, 기준: 102531.jpg)</code>)
+                        </li>
+                        <li>웹사이트 자동 아이콘 클릭 및 검색 버튼 클릭 결과
+                            (<code>[시간] 102531.jpg와 유사한 char_023.png 스프라이트 아이콘 클릭 완료</code>,
+                            <code>[시간] 검색이 성공적으로 완료되었습니다!</code>)
+                        </li>
+                        <li>유사도 비교 테스트 시작 및 결과 요약</li>
+                        <li><strong>오류 발생 시:</strong> 상세 오류 메시지 및 스택 트레이스 (문제 해결에 중요. 예:
+                            <code>[시간] 오류 발생: [Errno 2] No such file or directory: '...'</code>,
+                            <code>Traceback (most recent call last): ...</code>)
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p>로그 창은 프로그램이 현재 어떤 작업을 하고 있는지, 문제가 발생했다면 어떤 부분에서 발생했는지 파악하는 데 매우 중요한 단서를 제공합니다. 버그 제보 시 로그 내용을 함께 전달하면
+                개발자가 문제를 더 빠르고 정확하게 파악하는 데 도움이 됩니다.</p>
+        </section>
+
+        <section id="s7">
+            <h2>7. 주요 용어 설명</h2>
+            <ul>
+                <li><strong>OpenCV (Open Source Computer Vision Library):</strong> 이미지 처리 및 컴퓨터 비전 기능을 제공하는 오픈소스
+                    라이브러리입니다. 이 프로그램에서는 캡처된 이미지에서 캐릭터 아이콘의 윤곽선을 감지하는 데 사용됩니다.</li>
+                <li><strong>Selenium:</strong> 웹 브라우저를 자동화하는 데 사용되는 도구입니다. 이 프로그램에서는 pcrdfans.com 웹사이트에 자동으로 접속하고, 캐릭터
+                    아이콘을 클릭하며, 검색을 실행하는 데 사용됩니다.</li>
+                <li><strong>WebDriver (ChromeDriver):</strong> Selenium이 특정 웹 브라우저(이 경우 Chrome)를 제어할 수 있도록 하는 인터페이스 또는
+                    프로그램입니다. <code>webdriver-manager</code>는 이 ChromeDriver를 자동으로 관리(다운로드, 버전 관리)해줍니다.</li>
+                <li><strong>SSIM (Structural Similarity Index Measure):</strong> 두 이미지 간의 구조적 유사도를 측정하는 지표입니다. 값은 보통
+                    -1에서 1 사이이며, 1에 가까울수록 두 이미지가 시각적으로 더 유사함을 의미합니다. 이 프로그램에서는 캡처된 아이콘과 저장된 아이콘 간의 유사도를 비교하여 동일 캐릭터인지
+                    판단하는 기준으로 사용됩니다. ("임계값"은 이 SSIM 점수를 기준으로 합니다.)</li>
+                <li><strong>스프라이트 시트 (Sprite Sheet):</strong> 여러 개의 작은 이미지를 하나의 큰 이미지 파일에 모아 놓은 것입니다. pcrdfans.com은 캐릭터
+                    아이콘을 이 방식으로 관리하며, 프로그램은 이 스프라이트 시트를 다운로드하여 개별 아이콘으로 분리합니다.</li>
+                <li><strong>인게임 아이콘 (In-game Icon):</strong> 실제 프리코네 게임 내에서 사용되는 캐릭터 아이콘을 의미합니다. 이 프로그램에서는
+                    <code>redive.estertion.win</code>에서 다운로드한 JPG 파일들이 이에 해당합니다.
+                </li>
+                <li><strong>ROI (Region of Interest, 관심 영역):</strong> 이미지 전체가 아닌, 분석에 중요한 특정 부분 영역을 의미합니다. 이 프로그램에서는 캐릭터
+                    아이콘 이미지에서 실제 캐릭터 얼굴 및 주요 특징이 포함된 핵심 영역만을 선택적으로 비교하여 유사도 계산의 정확성을 높입니다.</li>
+                <li><strong>임계값 (Threshold):</strong> 어떤 판단을 내리기 위한 기준값을 의미합니다. 이 프로그램에서는 SSIM 점수가 사용자가 설정한 임계값 이상이어야 두
+                    아이콘을 동일 캐릭터로 간주합니다.</li>
+                <li><strong>GUI (Graphical User Interface):</strong> 사용자가 프로그램을 시각적인 요소(버튼, 창, 메뉴 등)를 통해 쉽게 조작할 수 있도록 하는
+                    인터페이스입니다.</li>
+            </ul>
+        </section>
+
+        <section id="s8">
+            <h2>8. 자주 묻는 질문</h2>
+            <p class="faq-question">Q1: 이 프로그램은 무료인가요?</p>
+            <p>A1: 네, 이 프로그램은 무료로 제공됩니다.</p><br>
+
+            <p class="faq-question">Q2: 어떤 운영체제에서 사용할 수 있나요?</p>
+            <p>A2: 이 프로그램은 Python으로 작성되었으며, Google Chrome 브라우저가 설치된 <strong>Windows 환경에서 테스트 및 개발되었습니다.</strong>
+                이론적으로는 Python 및 필요한 라이브러리가 설치된 다른 OS(macOS, Linux)에서도 실행 가능할 수 있으나, 화면 캡처, 창 제어 등 일부 기능은 OS에 따라 다르게
+                동작하거나 호환성 문제가 발생할 수 있습니다. 공식적으로는 Windows 환경을 권장합니다.</p><br>
+
+            <p class="faq-question">Q3: 프로그램 사용에 특별한 기술이 필요한가요?</p>
+            <p>A3: 기본적인 컴퓨터 사용 능력과 프리코네 게임에 대한 이해만 있으면 충분합니다. 이 설명서를 따라 하시면 쉽게 사용하실 수 있습니다.</p><br>
+
+            <p class="faq-question">Q4: 이 프로그램이 제 게임 계정에 영향을 주거나, 제재를 받을 가능성은 없나요?</p>
+            <p>A4: 이 프로그램은 게임 화면을 캡처하고, 공개된 웹사이트(<code>pcrdfans.com</code>)의 정보를 활용하여 검색을 자동화하는 방식으로 동작합니다. 게임 클라이언트를 직접
+                수정하거나, 서버와 비정상적인 통신을 하지 않으므로 일반적인 사용으로 인한 계정 제재 위험은 매우 낮다고 판단됩니다. 또한, 이 프로그램은 사용자의 게임 계정 정보나 개인 정보를
+                요구하거나 수집하지 않습니다. 하지만 모든 자동화 도구 사용에는 항상 잠재적인 위험이 따를 수 있음을 인지하시고, <strong>사용자 본인의 판단과 책임하에 사용하시기 바랍니다.</strong>
+                (본 설명서 상단의 "중요 숙지사항" 및 <a href="#s14">14. 면책 조항</a> 참고)</p><br>
+
+            <p class="faq-question">Q5: 프리코네 게임이 아닌 다른 게임에서도 사용할 수 있나요?</p>
+            <p>A5: 아니요, 이 프로그램은 프리코네 아레나의 캐릭터 아이콘과 <code>pcrdfans.com</code> 웹사이트 구조에 특화되어 개발되었으므로 다른 게임에서는 사용할 수 없습니다.
+            </p><br>
+
+            <p class="faq-question">Q6: 프로그램을 어떻게 설치하나요?</p>
+            <p>A6: 개발자의 배포 방식에 따라 다릅니다.</p>
+            <ul>
+                <li><strong>Python 스크립트 형태로 제공:</strong>
+                    <ol>
+                        <li>Python 최신 버전 (예: 3.8 이상)을 설치합니다. (<a href="https://www.python.org/"
+                                target="_blank">python.org</a>)<br>
+                                <strong>(※ Python 설치 과정에서 "Add Python to PATH" 옵션을 반드시 활성화 하시기 바랍니다.)</strong></li><br>
+                        <li>프로그램 실행에 필요한 라이브러리들을 설치합니다. 프로그램 폴더에 <code>requirements.txt</code> 파일이 있다면, 터미널(명령 프롬프트 또는
+                            PowerShell)에서 해당 폴더로 이동 후 <code>pip install -r requirements.txt</code> 명령어를 실행합니다.
+                            <pre><code>pip install -r requirements.txt</code></pre><br>
+                            <p>만약 <code>requirements.txt</code> 파일이 없다면, 코드 상단에 명시된 라이브러리(예:
+                            <code>cv2</code>, <code>Pillow</code>, <code>scikit-image</code>, <code>requests</code>,
+                            <code>selenium</code>, <code>webdriver-manager</code>, <code>beautifulsoup4</code>,
+                            <code>numpy</code>)들을 <code>pip install 라이브러리명</code> 형태로 개별 설치합니다.<br>
+                            (주의: <strong><code>tkinter</code>는 Python 표준 라이브러리이므로 <code>pip</code>로 별도 설치할 필요가 없습니다.)</strong><br>
+                            <pre><code>pip install opencv-python Pillow scikit-image selenium webdriver-manager requests beautifulsoup4 numpy</code></pre>
+                            <br>❗ <strong>패키지 설치 중 오류 발생 시:</strong> <code>pip</code>를 최신 버전으로 업그레이드한 후 다시 시도해 보세요.
+                            <pre><code>python -m pip install --upgrade pip</code></pre>
+                            </p>
+                        </li><br>
+                        <li>메인 Python 스크립트 파일(예: <code>arena_searcher.py</code>)을 실행합니다.</li><br>
+                    </ol>
+                </li>
+                <li><strong>실행 파일(.exe) 형태로 제공:</strong> 별도의 설치 과정 없이 다운로드한 파일을 실행하면 됩니다.</li>
+            </ul><br>
+
+            <p class="faq-question">Q7: "webdriver-manager", "selenium" 등의 오류가 발생하며 실행되지 않아요.</p>
+            <p>A7: Q6에서 안내된 대로 프로그램 실행에 필요한 라이브러리가 제대로 설치되지 않았거나, Python 또는 라이브러리 버전 간 호환성 문제일 수 있습니다. 설치된 라이브러리 버전을
+                확인하고, 필요시 재설치하거나 버전을 조정해 보세요. <code>pip list</code> 명령어로 설치된 라이브러리 목록 및 버전을 확인할 수 있습니다. <strong>특히,
+                    <code>selenium</code>과 <code>webdriver-manager</code>는 최신 버전으로 유지하는 것이 좋습니다.</strong> 로그 창의 오류 메시지를
+                확인하여 어떤 라이브러리에서 문제가 발생하는지 파악하는 것이 중요합니다.</p><br>
+
+            <p class="faq-question">Q8: Chrome 브라우저가 꼭 필요한가요? 다른 브라우저는 안 되나요?</p>
+            <p>A8: 네, 현재 프로그램은 Google Chrome 브라우저 자동화를 기준으로 작성되었습니다 (<code>ChromeDriverManager</code> 사용). 다른
+                브라우저(Firefox, Edge 등)를 지원하려면 코드 수정이 필요하며, 현재 버전에서는 지원하지 않습니다. <strong>Chrome이 설치되어 있지 않거나, 프로그램이 Chrome
+                    실행 파일을 찾을 수 없는 경우 (예: 특이한 경로에 설치) 오류가 발생합니다.</strong></p><br>
+
+            <p class="faq-question">Q9: "사이트 연결" 버튼은 언제 눌러야 하나요? 매번 눌러야 하나요?</p>
+            <p>A9: 한 번 성공적으로 연결하고 아이콘 데이터를 받아오면, 프로그램 재시작 전까지는 일반적으로 다시 누르지 않아도 됩니다.
+                하지만 브라우저 창을 사용자가 임의로 닫았거나, 인터넷 연결 문제로 웹사이트와의 연결이 끊어졌다고 판단될 경우 다시 눌러야 합니다. 로그 창에 관련 오류가 표시될 수 있습니다.</p>
+            <br>
+
+            <p class="faq-question">Q10: 아이콘 다운로드는 얼마나 자주 해야 하나요?</p>
+            <p>A10: "[사이트 연결]" 시 자동으로 최신 버전을 확인하고 필요시 업데이트합니다. 따라서 사용자가 직접 신경 쓸 필요는 거의 없습니다.</p><br>
+
+            <p class="faq-question">Q11: "전체 캐릭터 아이콘 다운로드"가 너무 오래 걸려요. 정상인가요?</p>
+            <p>A11: 수백 개의 캐릭터 아이콘을 다운로드하고 WebP에서 JPG로 변환하는 과정이므로 인터넷 속도 및 PC 성능에 따라 <strong>몇 분(일반적으로 1분 이내, 경우에 따라 그
+                    이상) 정도 소요될 수 있습니다.</strong> 이는 정상적인 과정이며, 한 번 완료하면 다시 할 필요는 거의 없습니다. 로그 창에 개별 파일 다운로드 및 변환 진행 상황이
+                표시되니 잠시 기다려주세요. 만약 비정상적으로 오래 걸리거나(예: 3분 이상) 멈춘 것 같다면 인터넷 연결을 확인하고 프로그램을 재시작하여 다시 시도해 보세요.</p><br>
+
+            <p class="faq-question">Q12: 아이콘 파일은 어디에 저장되나요? 임의로 삭제해도 되나요?</p>
+            <p>A12: 아이콘 파일은 프로그램 실행 폴더 내의 <strong><code>character_images</code></strong> 폴더에 하위 폴더(예:
+                <code>20250503</code>와 같은 버전명 폴더, <code>character_unit_icon_all</code> 폴더)를 만들어 저장됩니다. 이 파일들은 프로그램 작동에
+                <strong>필수적</strong>이므로 임의로 삭제하거나 수정하면 프로그램이 정상 작동하지 않을 수 있습니다. 만약 문제가 발생하여 삭제해야 한다면, 삭제 후 프로그램을 재시작하여
+                "[사이트 연결]" 또는 "[ (수동) 전체 캐릭터 아이콘 다운로드 ]"를 통해 다시 받아야 합니다.
+            </p><br>
+
+            <p class="faq-question">Q13: pcrdfans.com의 아이콘과 redive.estertion.win의 아이콘을 둘 다 사용하는 이유가 무엇인가요?</p>
+            <p>A13: 이 프로그램은 <strong>정확하고 효율적인 아이콘 인식 및 웹 자동화</strong>를 위해 다단계 비교 방식을 사용합니다.</p>
+            <ul>
+                <li><strong>1단계: <code>redive.estertion.win</code> 아이콘 (인게임 아이콘, JPG):</strong> 사용자가 캡처한 게임 화면의 아이콘과
+                    <strong>가장 먼저 비교</strong>됩니다. 실제 인게임 아이콘과 매우 유사하여 어떤 캐릭터인지 1차적으로 식별하는 데 가장 정확도가 높습니다. 이 단계는 "이 아이콘은
+                    대략 어떤 캐릭터일 것이다"라는 후보군을 찾는 과정입니다.
+                </li>
+                <li><strong>2단계: ★6 → ★3 변환:</strong> 1단계에서 ★6 캐릭터로 식별된 경우, 대부분의 웹사이트 검색(pcrdfans 포함)에서는 기본 등급(주로 ★3)
+                    아이콘을 사용하므로, 해당 캐릭터의 ★3 아이콘으로 <strong>내부적으로 변환</strong>하여 다음 단계 비교의 정확도를 높입니다.</li>
+                <li><strong>3단계: <code>pcrdfans.com</code> 아이콘 (스프라이트 아이콘, PNG):</strong> 1, 2단계를 거쳐 최종 식별/변환된 인게임 아이콘을
+                    <code>pcrdfans.com</code> 웹사이트에서 <strong>실제로 클릭해야 할 대상 아이콘</strong>과 다시 한번 비교합니다. 이를 통해 웹사이트의 수많은
+                    아이콘 중 정확히 클릭해야 할 아이콘을 최종 확정합니다. 이 단계는 "후보군 중에서 웹사이트의 이 아이콘이 확실하다"고 결정하는 과정입니다.
+                </li>
+            </ul><br>
+
+            <p class="faq-question">Q14: "아레나 조합 캡쳐" 시 어떤 부분을 캡처해야 하나요?</p>
+            <p>A14: 상대방 조합의 <strong>캐릭터 얼굴 또는 아이콘 전체가 명확하게 보이도록, 아이콘 영역을 모두 포함</strong>하여 드래그해야 합니다. 아이콘 테두리까지 충분히
+                포함하되, 각 아이콘 사이의 간격은 최소화하는 것이 좋습니다. 너무 넓거나 좁게 캡처하면 인식률이 떨어질 수 있습니다. (<a href="#s4-1">4.1 아레나 조합 캡처</a>의
+                스크린샷 예시 참고)</p><br>
+
+            <p class="faq-question">Q15: 캡처 영역을 잘못 지정했어요. 취소할 수 있나요?</p>
+            <p>A15: 현재 버전에서는 드래그 중 선택을 취소하는 기능은 없습니다. 마우스 버튼을 놓으면 해당 영역이 캡처되므로, 만약 잘못 선택했다면 당황하지 마시고 프로그램 메인 창으로 돌아온 후
+                다시 [아레나 조합 캡쳐] 버튼을 눌러 재시도하시면 됩니다.</p><br>
+
+            <p class="faq-question">Q16: 듀얼 모니터(또는 다중 모니터)를 사용하는데, 캡처가 제대로 안 돼요.</p>
+            <p>A16: 프로그램은 일반적으로 주 모니터를 기준으로 화면 캡처를 시도합니다. <strong>프리코네 게임이 실행 중인 모니터가 Windows 설정에서 주 모니터로 설정되어 있는지
+                    확인</strong>해 보세요. 만약 문제가 지속된다면, 일시적으로 단일 모니터 환경으로 변경하여 사용하거나, 프리코네 게임 창을 주 모니터로 옮겨 실행하는 것을 권장합니다. 일부
+                시스템에서는 창 모드로 실행 중인 게임의 캡처가 더 안정적일 수 있습니다.</p><br>
+
+            <p class="faq-question">Q17: 캡처했는데 아이콘 미리보기에 아무것도 안 떠요 / 이상한 이미지가 떠요.</p>
+            <p>A17: 이 문제는 다양한 원인이 있을 수 있습니다. 다음 사항들을 점검해 보세요.</p>
+            <ul>
+                <li><strong>캡처 영역 확인:</strong> <a href="#s4-1">4.1 아레나 조합 캡처</a>의 가이드라인대로 정확히 캡처했는지 다시 확인해 주세요. 캐릭터
+                    아이콘이
+                    아닌 배경이나 다른 UI를 캡처했을 수 있습니다.</li>
+                <li><strong>화면 가림 확인:</strong> 게임 화면 위에 다른 창(메신저 알림, 다른 프로그램 등)이 순간적으로 나타나 가리고 있었을 수 있습니다. 캡처 시에는 게임 화면
+                    외에 다른 창이 없도록 하는 것이 좋습니다.</li>
+                <li><strong>OpenCV 인식 실패:</strong> 매우 드물지만, 특정 화면 환경이나 게임 내 특수 효과(예: 캐릭터 등장 연출) 등으로 인해 OpenCV가 아이콘 윤곽선을
+                    제대로 감지하지 못했을 수 있습니다. 프로그램 재시작이나 PC 재부팅이 도움이 될 수 있습니다.</li>
+                <li><strong>유사도 비교 테스트 활용:</strong> <a href="#s5-1">5.1 유사도 비교 테스트</a>를 실행하여 원본 캡처 이미지가 어떻게 보이는지, 프로그램이
+                    어떤 부분을 아이콘으로 인식하려 했는지(또는 못했는지) 확인해 보세요.</li>
+            </ul><br>
+
+            <p class="faq-question">Q18: 캐릭터 인식이 잘 안 돼요. 다른 캐릭터로 인식하거나 아예 인식을 못 해요.</p>
+            <p>A18: 이 문제는 다양한 원인이 있을 수 있습니다. 다음 사항들을 점검해 보세요.</p>
+            <ul>
+                <li><strong>캡처 품질:</strong> 선명하고 정확하게 캡처되었는지 확인하세요. (Q14, Q17 참고)</li>
+                <li><strong>임계값 조절:</strong> <a href="#s4-2">4.2 캡처된 아이콘 확인 및 임계값 설정</a> 및 <a href="#s9">9. 고급
+                        활용팁</a>을 참고하여 임계값을 조절해 보세요.</li>
+                <li><strong>아이콘 데이터 최신 상태:</strong> "[사이트 연결]"을 통해 <code>pcrdfans.com</code> 아이콘을 최신화하고, 필요시 "[ (수동) 전체
+                    캐릭터 아이콘 다운로드 ]"를 통해 <code>redive.estertion.win</code> 아이콘도 최신 데이터로 유지하세요. 특히 게임 업데이트로 신규 캐릭터나 신규 ★6이
+                    추가된 경우 데이터 업데이트가 필수적입니다.</li>
+                <li><strong>유사도 비교 테스트 활용:</strong> <a href="#s5-1">5.1 유사도 비교 테스트</a>를 사용하여 어떤 아이콘과 혼동되는지, 각 단계별 유사도
+                    점수는 어느 정도인지 상세히 확인하여 원인을 분석할 수 있습니다.</li>
+                <li><strong>★6 아이콘 문제:</strong> ★6 아이콘은 테두리나 배경 효과가 ★3과 달라 인식에 영향을 줄 수 있습니다. 프로그램은 이를 자동으로 ★3 기준으로 변환하여
+                    비교하려고 시도하지만, 완벽하지 않을 수 있습니다. 특히 신규 ★6 캐릭터의 경우 데이터 업데이트가 필요할 수 있습니다.</li>
+                <li><strong>특정 캐릭터의 어려움:</strong> 일부 캐릭터는 아이콘 디자인 자체가 다른 캐릭터와 매우 유사하거나(예: 동일 캐릭터의 다른 버전), 배경이 복잡하거나, 아이콘
+                    크기가 유독 작거나 커서 인식률이 낮을 수 있습니다.</li>
+            </ul><br>
+
+            <p class="faq-question">Q19: 한정 캐릭터나 콜라보 캐릭터도 인식하나요?</p>
+            <p>A19: <code>redive.estertion.win</code>과 <code>pcrdfans.com</code>에서 해당 캐릭터의 아이콘 데이터를 제공하고, 사용자의 프로그램에 해당
+                아이콘 데이터가 최신 버전으로 다운로드되어 있다면 인식 가능합니다. 최신 캐릭터의 경우, 아이콘 데이터가 각 사이트에 반영되고 사용자가 프로그램 내에서 데이터를 업데이트할 때까지 시간이
+                걸릴 수 있습니다.</p><br>
+
+            <p class="faq-question">Q20: "아레나 조합 검색" 버튼을 눌러도 아무 반응이 없거나, Chrome 브라우저가 안 떠요.</p>
+            <p>A20: 이 문제는 다양한 원인이 있을 수 있습니다. 다음 사항들을 점검해 보세요.</p>
+            <ul>
+                <li><strong>사이트 연결 확인:</strong> <a href="#s3-3">3.3 사이트 연결 및 아이콘 초기화</a>가 성공적으로 완료되었는지 확인하세요. Selenium
+                    WebDriver(Chrome)가 제대로 초기화되지 않았을 수 있습니다. 로그 창에 "사이트 연결 및 아이콘 처리 완료!" 메시지가 있는지 확인하세요.</li>
+                <li><strong>로그 창 확인:</strong> 로그 창에 특정 오류 메시지(예: <code>WebDriverException</code>,
+                    <code>NoSuchElementException</code> 등)가 있는지 확인하세요. 해당 오류 메시지를 검색하거나 개발자에게 문의하면 해결에 도움이 될 수 있습니다.
+                </li>
+                <li><strong>Chrome 설치 및 버전 확인:</strong> Google Chrome이 올바르게 설치되어 있고, 최신 버전인지 확인하세요. Chrome 브라우저 자체가
+                    손상되었을 수도 있습니다. 필요시 Chrome을 재설치해 보세요.</li>
+                <li><strong>백신/방화벽 확인:</strong> 일부 백신 프로그램이나 방화벽이 Chrome 또는 WebDriver의 실행을 차단하고 있지 않은지 확인하세요. 프로그램 또는 관련
+                    프로세스(예: <code>chromedriver.exe</code>)를 예외 처리해야 할 수 있습니다.</li>
+                <li><strong>캡처된 아이콘 부재:</strong> [아레나 조합 캡쳐]를 통해 아이콘을 먼저 캡처해야 합니다. 메인 창의 미리보기 영역에 아이콘이 모두 (또는 인식 가능한
+                    만큼)
+                    표시되어 있어야 검색이 진행됩니다.</li>
+            </ul><br>
+
+            <p class="faq-question">Q21: "유사도 비교 테스트" 결과 창의 점수는 무엇을 의미하나요?</p>
+            <p>A21: 점수는 <strong>SSIM(Structural Similarity Index Measure, 구조적 유사도 지수)</strong> 값을 의미하며, 일반적으로 -1에서 1 사이의
+                값을 가집니다. 이 프로그램에서는 0과 1 사이로 정규화되어 표시될 수 있으며, <strong>1에 가까울수록 두 이미지가 시각적으로 더 유사하다는 뜻</strong>입니다. 프로그램은
+                사용자가 설정한 "임계값"보다 이 SSIM 점수가 높아야 두 아이콘을 동일(또는 매우 유사한) 캐릭터로 판단합니다. 예를 들어, 임계값이 0.50일 때 어떤 아이콘 비교 점수가
+                0.65라면 유사하다고 판단하고, 0.45라면 다르다고 판단합니다.</p><br>
+
+            <p class="faq-question">Q22: 프로그램 업데이트는 어떻게 하나요?</p>
+            <p>A22: 개발자가 새로운 버전의 스크립트나 실행 파일을 배포하면, 기존 파일을 새 파일로 교체하여 업데이트할 수 있습니다.</p>
+            <ul>
+                <li>업데이트 시 <strong><code>character_images</code> 폴더는 가급적 유지</strong>하시는 것이 좋습니다. 이전 버전에서 다운로드한 아이콘 데이터를
+                    새 버전에서도 대부분 사용할 수 있어 다시 다운로드하는 시간을 절약할 수 있습니다.</li>
+                <li>단, 프로그램의 아이콘 처리 방식에 큰 변경이 있거나, 개발자가 배포 시 별도로 <code>character_images</code> 폴더 삭제를 권장하는 경우에는 해당 폴더를
+                    백업 후 삭제하고 새 버전에서 아이콘을 다시 다운로드하는 것이 좋을 수 있습니다. (보통은 기존 폴더 유지)</li>
+            </ul><br>
+
+            <p class="faq-question">Q23: 개발자에게 버그를 제보하거나 기능을 제안하고 싶어요.</p>
+            <p>A23: 매우 환영합니다! <a href="#s11">11. 피드백 및 버그 제보 안내</a> 섹션을 참고하여 자세한 정보를 제공해 주시면 프로그램 개선에 큰 도움이 됩니다.</p><br>
+        </section>
+
+        <section id="s9">
+            <h2>9. 고급 활용팁</h2>
+            <ul>
+                <li><strong>프린세스 아레나(프레나) 공략 시:</strong>
+                    <ul>
+                        <li>이 프로그램은 한 번에 한 조합만 분석합니다. 프린세스 아레나의 경우, <strong>상대방의 1, 2, 3번 각 조합마다 개별적으로 [아레나 조합 캡쳐] 및
+                                [아레나 조합 검색] 과정을 반복</strong>해야 합니다. 각 조합 검색 후 브라우저의 탭을 유지하거나 결과를 메모해두면 편리합니다.</li>
+                    </ul>
+                </li><br>
+                <li><strong>임계값 조절 심층 가이드:</strong>
+                    <ul>
+                        <li><strong>기본값(0.50) 활용:</strong> 대부분의 경우 기본 임계값으로 충분합니다. 먼저 기본값으로 시도해 보세요.</li>
+                        <li><strong>특정 캐릭터 오인식 시:</strong> 만약 특정 캐릭터(예: 배경이 매우 복잡한 아이콘, 변신 전/후 모습이 아이콘 상 크게 다른 캐릭터, 색감이
+                            유사한 다른 캐릭터)가 자주 오인식된다면, <a href="#s5-1">5.1 유사도 비교 테스트</a> 기능을 활용하세요.
+                            <ol>
+                                <li>오인식되는 상황을 재현하여 캡처하고, [유사도 비교 테스트]를 실행합니다.</li>
+                                <li>결과 창에서 해당 분할 아이콘에 대해 <strong>실제로 일치하는 캐릭터의 스프라이트 아이콘 유사도 점수</strong>와 <strong>오인식된
+                                        캐릭터의 스프라이트 아이콘 유사도 점수</strong>를 비교합니다.</li>
+                                <li>일치하는 캐릭터의 점수보다는 높고, 오인식된 캐릭터의 점수보다는 낮은 적절한 값으로 임계값을 미세 조정해 볼 수 있습니다. (예: 일치하는 캐릭터와의
+                                    유사도가 0.45, 오인식된 캐릭터와의 유사도가 0.55라면, 임계값을 0.48~0.52 사이로 조절)</li>
+                            </ol>
+                        </li>
+                        <li><strong>너무 낮은 임계값 주의:</strong> 임계값을 너무 낮추면(예: 0.30 이하) 전혀 다른 캐릭터도 유사하다고 판단하여 검색 결과의 질이 떨어질 수
+                            있습니다. 오히려 더 많은 오인식이 발생할 수 있습니다.</li>
+                        <li><strong>너무 높은 임계값 주의:</strong> 임계값을 너무 높이면(예: 0.70 이상) 캡처 시 약간의 각도나 조명 차이에도 다른 캐릭터로 인식하거나 아예
+                            인식하지 못할 수 있습니다. 특히 다양한 환경에서 캡처해야 하는 경우 불리할 수 있습니다.</li>
+                    </ul>
+                </li><br>
+                <li><strong>빠른 재검색을 위한 준비:</strong>
+                    <ul>
+                        <li>아레나 상위권에서는 비슷한 조합을 자주 만날 수 있습니다. 프로그램이 이미 실행 중이고 "[사이트 연결]"이 완료된 상태라면, 새로운 상대를 만났을 때 [아레나
+                            조합
+                            캡쳐] -> [아레나 조합 검색] 과정만 빠르게 반복하여 효율을 높일 수 있습니다. (현재 버전에서는 이전 캡처 결과 저장/로드 기능은 지원하지 않습니다.)
+                        </li>
+                    </ul>
+                </li><br>
+                <li><strong>네트워크 환경 최적화:</strong>
+                    <ul>
+                        <li>아이콘 다운로드 및 웹사이트 자동 검색은 인터넷 연결 속도에 영향을 받습니다. 가능하면 <strong>유선 LAN 또는 안정적인 Wi-Fi 환경</strong>에서
+                            사용하시는 것이 쾌적합니다. 모바일 핫스팟 등 불안정한 네트워크에서는 지연이나 오류가 발생할 수 있습니다.</li>
+                    </ul>
+                </li><br>
+                <li><strong>화면 해상도와 게임 창 크기:</strong>
+                    <ul>
+                        <li>프로그램은 다양한 화면 해상도에서 작동하도록 설계되었으나, 너무 낮거나 비표준 해상도에서는 캡처나 아이콘 인식에 예기치 않은 문제가 발생할 수 있습니다. 게임 창이
+                            너무 작으면 아이콘 해상도가 낮아져 인식률이 떨어질 수 있습니다.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="s10">
+            <h2>10. 문제 해결 및 팁</h2>
+            <ul>
+                <li><strong>"사이트 연결이 끊어져 있습니다." 또는 <code>WebDriverException</code> 관련 오류 발생 시:</strong>
+                    <ul>
+                        <li>가장 먼저 <strong>인터넷 연결 상태를 확인</strong>하세요.</li>
+                        <li>[사이트 연결] 버튼을 다시 클릭하여 연결을 재시도하세요.</li>
+                        <li><strong>Chrome 브라우저가 예기치 않게 종료</strong>되었거나 응답하지 않는 상태일 수 있습니다. 작업 관리자(Ctrl+Shift+Esc)에서 실행
+                            중인 모든 <code>chrome.exe</code> 및 <code>chromedriver.exe</code> 프로세스를 종료하고 다시 시도해 보세요.</li>
+                        <li>드물게 <code>webdriver-manager</code>가 최신 ChromeDriver를 제대로 다운로드하지 못했거나, 기존 ChromeDriver 파일이
+                            손상되었을 수 있습니다. <code>C:\Users\사용자명\.wdm\drivers\chromedriver</code> (Windows 기준, 사용자명은 실제 사용자
+                            폴더명) 경로의 하위 폴더(버전명 폴더)를 삭제하고 프로그램을 재실행하면 ChromeDriver를 다시 다운로드합니다.</li>
+                    </ul>
+                </li><br>
+                <li><strong>캐릭터 아이콘 인식이 지속적으로 잘 안 될 경우 (Q18 반복 점검 후에도):</strong>
+                    <ul>
+                        <li><strong>게임 내 그래픽 설정 확인:</strong> 프리코네 게임 내 그래픽 설정이 너무 낮거나, 화면 필터(블루라이트 필터, 야간 모드 등 OS 또는
+                            서드파티 프로그램 필터)가 적용되어 아이콘 색감이 크게 왜곡된 경우 인식률에 영향을 줄 수 있습니다. 게임 내 그래픽 설정을 '표준' 또는 '고화질'로, 외부 필터는
+                            해제하고 시도해 보세요.</li>
+                        <li><strong>PC 성능 문제:</strong> PC 사양이 매우 낮아 게임 자체가 끊기거나 화면 반응이 느린 경우, 캡처 시 이미지가 흔들리거나 제대로 된 프레임을
+                            잡지 못할 수 있습니다. 다른 리소스를 많이 사용하는 프로그램을 종료하고 시도해 보세요.</li>
+                    </ul>
+                </li><br>
+                <li><strong><code>pcrdfans.com</code> 웹사이트 구조 변경 시 대처:</strong>
+                    <ul>
+                        <li>만약 <code>pcrdfans.com</code> 웹사이트의 HTML 구조(클래스 명, ID, XPATH 등)가 크게 변경되면 프로그램의 웹 자동화 로직(아이콘
+                            클릭, 필터 적용, 검색 버튼 클릭 등)이 정상 작동하지 않을 수 있습니다. 이 경우 로그 창에 <code>NoSuchElementException</code>
+                            (요소를 찾을 수 없음), <code>TimeoutException</code> (요소가 나타날 때까지 기다렸지만 실패) 등의 오류가 자주 발생할 수 있습니다.
+                        </li>
+                        <li>이러한 문제는 사용자가 직접 해결하기 어려우며, 개발자의 프로그램 업데이트를 통해서만 해결될 수 있습니다. <a href="#s11">11. 피드백 및 버그 제보
+                                안내</a>를 통해 개발자에게 알려주시면 프로그램 개선에 큰 도움이 됩니다.</li>
+                    </ul>
+                </li><br>
+                <li><strong>"전체 캐릭터 아이콘 다운로드" 중 특정 파일 다운로드/변환 실패 시:</strong>
+                    <ul>
+                        <li>로그 창에 어떤 파일에서 문제가 발생했는지 확인하세요. (예: <code>다운로드 실패: 123456.webp - HTTP 404</code>,
+                            <code>JPG 변환 실패: 123456.webp - (오류 내용)</code>)
+                        </li>
+                        <li><code>redive.estertion.win</code> 사이트의 일시적인 문제이거나 해당 파일 자체의 문제일 수 있습니다.</li>
+                        <li>몇몇 파일 실패는 전체 기능에 큰 영향을 주지 않을 수 있지만(해당 캐릭터를 사용하지 않는다면), 반복되거나 중요한 캐릭터에서 발생한다면 개발자에게 문의하는 것이
+                            좋습니다.</li>
+                    </ul>
+                </li><br>
+                <li><strong>브라우저가 자동으로 닫히지 않는 것이 정상입니다:</strong>
+                    <ul>
+                        <li>아레나 조합 검색이 완료된 후, 프로그램이 제어하던 Chrome 브라우저 창은 사용자가 검색 결과를 확인하고 활용할 수 있도록 <strong>자동으로 닫히지
+                                않습니다.</strong> 사용자가 직접 닫아주셔야 합니다.</li>
+                    </ul>
+                </li><br>
+                <li><strong>프로그램이 갑자기 멈추거나 응답 없음 상태가 되는 경우:</strong>
+                    <ul>
+                        <li>대량의 아이콘 다운로드나 복잡한 이미지 처리, 웹 자동화 작업 중 일시적으로 PC 리소스를 많이 사용할 때 발생할 수 있습니다. 대부분의 경우 잠시 기다리면(몇 초
+                            ~ 몇 분) 작업이 완료되고 정상으로 돌아옵니다. 특히 "[사이트 연결]" 버튼 클릭 직후나 "[ (수동) 전체 캐릭터 아이콘 다운로드 ]" 실행 시 발생할 수
+                            있습니다.</li>
+                        <li>만약 장시간 응답이 없다면, 작업 관리자를 통해 프로그램을 강제 종료하고 재시작해야 할 수 있습니다. 재시작 후에도 동일한 지점에서 문제가 반복된다면 로그를 확인하고
+                            개발자에게 문의하세요.</li>
+                    </ul>
+                </li><br>
+                <li><strong>항상 프로그램과 Chrome 브라우저를 최신 버전으로 유지:</strong>
+                    <ul>
+                        <li><code>webdriver-manager</code>는 대부분 최신 Chrome 버전에 맞는 ChromeDriver를 자동으로 관리해주지만, 간혹 Chrome
+                            브라우저의 급격한 업데이트와 <code>webdriver-manager</code>의 ChromeDriver 지원 사이에 시간 차이가 발생하여 호환성 문제가 생길 수
+                            있습니다. 프로그램과 Chrome 브라우저 모두 가능한 최신 안정화 버전으로 유지하는 것이 좋습니다.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="s11">
+            <h2>11. 피드백 및 버그 제보 안내</h2>
+            <p>여러분의 피드백과 버그 제보는 프로그램을 더욱 발전시키는 데 큰 힘이 됩니다!</p>
+            <h4>버그 발견 시 제보 방법:</h4>
+            <ul>
+                <li><strong>제보 채널:</strong> <strong>GitHub 이슈 페이지</strong></li>
+                <li><strong>필수 정보:</strong>
+                    <ol>
+                        <li><strong>문제 발생 상황에 대한 상세한 설명:</strong> 어떤 버튼을 눌렀을 때, 어떤 작업을 하던 중 문제가 발생했는지 최대한 자세히 알려주세요. (예:
+                            "언어를 English로 설정하고 사이트 연결 버튼을 누른 후, 전체 아이콘 다운로드 중 특정 파일에서 오류가 발생하며 프로그램이 멈췄습니다.")</li>
+                        <li><strong>로그 창의 전체 내용:</strong> 특히 오류 메시지나 스택 트레이스가 포함된 부분을 복사하여 본문에 첨부하거나, 스크린샷으로 첨부해 주세요.
+                            (로그는 문제 원인 파악에 가장 중요합니다!)</li>
+                        <li><strong>(권장) 문제 상황 스크린샷 또는 짧은 영상:</strong> 시각 자료는 문제 이해에 큰 도움이 됩니다. (오류 메시지 창, 프로그램 화면 등)
+                        </li>
+                        <li><strong>사용 환경 정보:</strong> 운영체제 종류 및 버전 (예: Windows 10 Pro 22H2), Chrome 브라우저 버전, 프로그램 버전.
+                        </li>
+                    </ol>
+                </li>
+            </ul><br>
+            <h4>기능 제안 및 개선 아이디어:</h4>
+            <p>언제든지 환영합니다! 위 제보 채널을 통해 자유롭게 의견을 보내주세요.</p>
+        </section>
+
+        <section id="s12">
+            <h2>12. 프로그램 제거 방법</h2>
+            <h4>Python 스크립트 및 단순 .exe 실행 파일:</h4>
+            <ol>
+                <li>프로그램이 저장된 폴더 (예: <code>Priconne Arena Deck Auto Searcher</code> 폴더)를 <strong>그대로 삭제</strong>하시면 됩니다.
+                </li>
+                <li>프로그램 실행 시 생성되었던 <code>character_images</code> 폴더도 함께 삭제됩니다.</li>
+                <li>별도의 레지스트리 항목이나 시스템 폴더 내 파일은 생성하지 않습니다.</li>
+            </ol><br>
+            <h4>ChromeDriver 캐시 폴더 (선택 사항):</h4>
+            <ul>
+                <li><code>webdriver-manager</code>는 ChromeDriver 파일을 <code>C:\Users\사용자명\.wdm</code> 폴더 (Windows 기준)에
+                    캐시합니다. 프로그램 제거와는 별개로 이 폴더를 삭제해도 무방하나, 다른 <code>webdriver-manager</code>를 사용하는 프로그램이 있다면 영향을 줄 수 있으니
+                    확실하지 않으면 그대로 두셔도 됩니다. (이 폴더는 ChromeDriver 파일만 저장하므로 용량이 크지 않습니다.)</li>
+            </ul>
+        </section>
+
+        <section id="s13">
+            <h2>13. 감사의 말</h2>
+            <p>이 프로그램을 개발하고 개선하는 과정에서 많은 분들과 훌륭한 오픈소스 프로젝트로부터 큰 도움을 받았습니다. 이 자리를 빌려 진심으로 감사의 말씀을 전합니다.</p>
+            <ul>
+                <li><strong>데이터 제공처:</strong>
+                    <ul>
+                        <li><strong>pcrdfans.com:</strong> 각 서버별 아레나 조합 및 캐릭터 아이콘 스프라이트 데이터 제공에 깊이 감사드립니다. 이 프로그램의 핵심
+                            기능은 pcrdfans.com의 훌륭한 데이터베이스 덕분에 가능했습니다.</li>
+                        <li><strong>redive.estertion.win:</strong> 고품질의 인게임 캐릭터 아이콘 데이터를 제공해주셔서 캐릭터 인식 정확도를 높이는 데 결정적인
+                            도움을 받았습니다.</li>
+                    </ul>
+                </li><br>
+                <li><strong>게임 유저 여러분:</strong>
+                    <ul>
+                        <li>프린세스 커넥트! Re:Dive를 사랑하고 즐기시는 모든 유저분들, 그리고 유용한 정보와 공략을 공유해주시는 커뮤니티의 모든 분들께 감사드립니다.</li>
+                    </ul>
+                </li><br>
+                <li><strong>이 프로그램을 사용해주시는 모든 분들께:</strong>
+                    <ul>
+                        <li>부족한 점이 많을 수 있지만, 너그러이 사용해주시고 피드백을 통해 함께 발전시켜 나갈 수 있기를 바랍니다. 즐거운 프리코네 생활에 조금이나마 도움이 되기를 바랍니다!
+                        </li>
+                    </ul>
+                </li><br>
+            </ul>
+            <p>이 모든 분들의 도움과 노력에 다시 한번 깊은 감사를 드립니다.</p>
+        </section>
+
+        <section id="s14">
+            <h2>14. 면책 조항</h2>
+            <div class="disclaimer">
+                <ol>
+                    <li>본 프로그램("프리코네 아레나 조합 자동 검색기")은 사용자 편의를 위해 개인적으로 개발된 비공식 보조 도구입니다.</li>
+                    <li>본 프로그램의 사용으로 인해 발생하는 모든 직접적, 간접적, 결과적, 특별 또는 징벌적 손해(시간 손실 등을 포함하되 이에 국한되지 않음)에 대해 개발자는 어떠한 법적
+                        책임도 지지 않습니다.</li>
+                    <li>사용자는 본 프로그램을 사용하는 모든 행위에 대한 전적인 책임을 본인이 부담하는 것에 동의합니다.</li>
+                    <li>본 프로그램은 <code>pcrdfans.com</code> 및 <code>redive.estertion.win</code> 등 외부 웹사이트의 정보 및 서비스에
+                        의존합니다. 이러한 외부 서비스의 변경, 중단 또는 오류로 인해 프로그램이 정상적으로 작동하지 않을 수 있으며, 개발자는 이에 대한 책임을 지지 않습니다.</li>
+                    <li>개발자는 본 프로그램이 항상 정확하게 작동하거나 모든 사용자 환경에서 완벽하게 호환될 것이라고 보증하지 않습니다. 프로그램의 버그, 오류, 누락 또는 부정확성에 대해 책임을
+                        지지 않습니다.</li>
+                    <li>본 프로그램의 다운로드, 설치, 사용은 전적으로 사용자 본인의 위험 부담이며, 사용자는 프로그램 사용 전에 충분한 테스트와 주의를 기울여야 합니다.</li>
+                </ol>
+                <p><strong>본 프로그램을 사용하는 것은 위 면책 조항에 동의하는 것으로 간주합니다.</strong></p>
+            </div>
+        </section>
+
+        <hr>
+        <p style="text-align: center; margin-top: 20px; font-style: italic;">이 설명서가 프리코네 아레나 조합 자동 검색기를 사용하는 데 도움이 되기를
+            바랍니다. 즐거운 프리코네 생활 되세요!</p>
+    </div>
+</body>
+
+</html>
