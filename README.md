@@ -3,9 +3,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 
-
-[여기 동영상 4-6]
-
+https://github.com/user-attachments/assets/e0e2bf1f-71bb-4272-ab39-dc97e466ce9b
 
 
 <BR>
